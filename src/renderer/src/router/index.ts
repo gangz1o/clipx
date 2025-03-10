@@ -5,6 +5,7 @@ import General from '@renderer/views/General.vue'
 import Shortcuts from '@renderer/views/Shortcuts.vue'
 import Sync from '@renderer/views/Sync.vue'
 import Advanced from '@renderer/views/Advanced.vue'
+import Clipboard from '@renderer/components/clipboard/index.vue'
 const routes = [
   {
     name: 'Layout',
@@ -33,6 +34,11 @@ const routes = [
         component: Advanced
       }
     ]
+  },
+  {
+    name: 'Clipboard',
+    path: '/clipboard',
+    component: Clipboard
   }
 ]
 const router = createRouter({
