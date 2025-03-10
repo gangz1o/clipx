@@ -1,6 +1,7 @@
 import { shell, BrowserWindow } from 'electron'
 import { join } from 'path'
 import { is } from '@electron-toolkit/utils'
+import * as ipcGeneral from './ipcGeneral'
 import icon from '../../../resources/icon.png?asset'
 export function createWindow(): void {
   // Create the browser window.
@@ -18,6 +19,9 @@ export function createWindow(): void {
       sandbox: false
     }
   })
+
+  ipcGeneral.handleAutoLaunch()
+  ipcGeneral.handleSound()
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()

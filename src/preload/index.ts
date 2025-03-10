@@ -3,7 +3,8 @@ import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
 const api = {
-  toggleAutoLaunch: (autoLaunch: boolean) => ipcRenderer.invoke('toggleAutoLaunch', autoLaunch)
+  toggleAutoLaunch: (autoLaunch: boolean) => ipcRenderer.invoke('toggleAutoLaunch', autoLaunch),
+  toggleSound: (soundEnabled: boolean) => ipcRenderer.invoke('toggleSound', soundEnabled)
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to

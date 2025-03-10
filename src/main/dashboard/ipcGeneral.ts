@@ -15,3 +15,9 @@ export const handleAutoLaunch = () => {
     }
   })
 }
+
+export const handleSound = () => {
+  ipcMain.handle('toggleSound', (_, enable: boolean) => {
+    console.log('toggleSound', enable)
+  })
+}

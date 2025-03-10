@@ -5,6 +5,7 @@ declare global {
     electron: ElectronAPI
     api: {
       toggleAutoLaunch: (autoLaunch: boolean) => Promise<void>
+      toggleSound: (soundEnabled: boolean) => Promise<void>
     }
   }
 }

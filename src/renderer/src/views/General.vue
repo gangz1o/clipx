@@ -9,8 +9,8 @@
             <input
               type="checkbox"
               :checked="autoLaunch"
-              @change="toggleAutoLaunch"
               class="sr-only peer"
+              @change="toggleAutoLaunch"
             />
             <div
               class="w-9 h-5 bg-[#d2d2d7] peer-focus:outline-none rounded-full peer transition-none peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-none peer-checked:bg-[#2a64c5]"
@@ -24,8 +24,8 @@
             <input
               type="checkbox"
               :checked="soundEnabled"
-              @change="toggleSound"
               class="sr-only peer"
+              @change="toggleSound"
             />
             <div
               class="w-9 h-5 bg-[#d2d2d7] peer-focus:outline-none rounded-full peer transition-none peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-none peer-checked:bg-[#2a64c5]"
@@ -51,6 +51,7 @@ const toggleAutoLaunch = () => {
 
 const toggleSound = () => {
   generalStore.toggleSound()
+  window.api.toggleSound(soundEnabled.value)
 }
 </script>
 
