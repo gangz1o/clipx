@@ -41,12 +41,12 @@
 <script setup lang="ts">
 import { useGeneralStore } from '@renderer/stores/useGeneralStore'
 import { storeToRefs } from 'pinia'
-
 const generalStore = useGeneralStore()
 const { autoLaunch, soundEnabled } = storeToRefs(generalStore)
 
 const toggleAutoLaunch = () => {
   generalStore.toggleAutoLaunch()
+  window.api.toggleAutoLaunch(autoLaunch.value)
 }
 
 const toggleSound = () => {
